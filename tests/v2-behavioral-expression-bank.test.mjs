@@ -69,5 +69,5 @@ test('OWNER-authorized V5 remains immutable historical evidence after V6 success
   assert.equal(review.production_impact,'NONE');
   assert.equal(review.historical_attempts_unchanged,true);
   const runtime=fs.readFileSync(new URL('../lib/v2/validation.ts',import.meta.url),'utf8');
-  assert.match(runtime,/viago-validation-bank-233-empirical-language-v1\.0\.0/);
+  assert.match(runtime,/viago-validation-bank-233-targeted-language-v1\.0\.0/);
 });

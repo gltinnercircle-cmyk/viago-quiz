@@ -1,5 +1,5 @@
 import { createHash, randomUUID } from 'node:crypto';
-import bank from '@/data/v2-research/viago-validation-bank-233-empirical-language-v1.0.0.json';
+import bank from '@/data/v2-research/viago-validation-bank-233-targeted-language-v1.0.0.json';
 import { ACTIVE_BANK_ACTIVATED_AT, ACTIVE_BANK_DEPLOYMENT_ID, ACTIVE_BANK_SOURCE_COMMIT, ACTIVE_VALIDATION_BANK_ID, assertActiveValidationPointer } from '@/lib/v2/validationProvenance';
 
 export const VALIDATION_MODE = 'VIAGO_V2_PRIVATE_HUMAN_VALIDATION';
@@ -20,7 +20,7 @@ class DeterministicRng {
 }
 
 export function createSeed() { return randomUUID(); }
-export function assembleValidationAttempt(seed: string, history: HistoryExposure[] = []) {
+export function assembleValidationAttempt(seed: string, history: HistoryExposure[] = [], identityEvidence:{canonical_history_identity_id:string|null;historical_participant_ids:string[]}={canonical_history_identity_id:null,historical_participant_ids:[]}) {
   assertActiveValidationPointer();
   const recent=history.slice(-3);const historySnapshotHash=createHash('sha256').update(JSON.stringify(recent)).digest('hex');
   const rng=new DeterministicRng(`${BANK_VERSION}|${ASSEMBLER_VERSION}|${historySnapshotHash}|${seed}`);
@@ -32,7 +32,7 @@ export function assembleValidationAttempt(seed: string, history: HistoryExposure
   for(let i=0;i<26;i++) add(bank.questions.filter(q=>q.format==='SINGLE_SELECT'));
   const questions=rng.shuffle(chosen).map((q,index)=>({position:index+1,question_revision_id:q.question_revision_id,question_id:q.id,format:q.format,color:q.color,prompt:q.prompt,domain:q.domain,context:q.context,semantic_family:q.family,construct:q.construct,option_order:q.format==='SINGLE_SELECT'?rng.shuffle(q.options.map(o=>o.id)):[],options:q.options.map(o=>({...o,option_revision_id:`${q.question_revision_id}:${o.id}`}))}));
   const manifestHash=createHash('sha256').update(JSON.stringify(questions.map(({prompt,options,...q})=>q))).digest('hex');
-  return {mode:VALIDATION_MODE,bank_version:BANK_VERSION,bank_hash:BANK_HASH,bank_activated_at:ACTIVE_BANK_ACTIVATED_AT,assembler_version:ASSEMBLER_VERSION,scoring_version:SCORING_VERSION,source_commit:process.env.VERCEL_GIT_COMMIT_SHA||ACTIVE_BANK_SOURCE_COMMIT,source_deployment_id:process.env.VERCEL_DEPLOYMENT_ID||process.env.VERCEL_URL||ACTIVE_BANK_DEPLOYMENT_ID,seed,history_snapshot_hash:historySnapshotHash,history_attempt_ids:recent.map(x=>x.attempt_id),history_policy:{completed_attempt_window:3,unfinished_rule:'ANSWERED_REVISIONS_ONLY',fallback_relaxations:relaxations},manifest_hash:manifestHash,questions};
+  return {mode:VALIDATION_MODE,bank_version:BANK_VERSION,bank_hash:BANK_HASH,bank_activated_at:ACTIVE_BANK_ACTIVATED_AT,assembler_version:ASSEMBLER_VERSION,scoring_version:SCORING_VERSION,source_commit:process.env.VERCEL_GIT_COMMIT_SHA||ACTIVE_BANK_SOURCE_COMMIT,source_deployment_id:process.env.VERCEL_DEPLOYMENT_ID||process.env.VERCEL_URL||ACTIVE_BANK_DEPLOYMENT_ID,seed,canonical_history_identity_id:identityEvidence.canonical_history_identity_id,historical_participant_ids_considered:identityEvidence.historical_participant_ids,history_snapshot_hash:historySnapshotHash,history_attempt_ids:recent.map(x=>x.attempt_id),history_policy:{completed_attempt_window:3,unfinished_rule:'ANSWERED_REVISIONS_ONLY',fallback_relaxations:relaxations},manifest_hash:manifestHash,questions};
 }
 
 export function scoreValidationAttempt(manifest: ReturnType<typeof assembleValidationAttempt>, answers: Record<string,number|string>) {
@@ -42,4 +42,4 @@ export function scoreValidationAttempt(manifest: ReturnType<typeof assembleValid
   return {scores,primary:ranking[0][0],secondary:ranking[1][0],margin:ranking[0][1]-ranking[1][1],ranking:ranking.map(([color])=>color)};
 }
 
-export function publicManifest(manifest: ReturnType<typeof assembleValidationAttempt>){return {...manifest,questions:manifest.questions.map(q=>({position:q.position,question_revision_id:q.question_revision_id,format:q.format,prompt:q.prompt,options:q.option_order.map(id=>{const option=q.options.find(o=>o.id===id);return{id,option_revision_id:option?.option_revision_id,label:option?.label||''};})}))};}
+export function publicManifest(manifest: ReturnType<typeof assembleValidationAttempt>){return {mode:manifest.mode,bank_version:manifest.bank_version,bank_hash:manifest.bank_hash,assembler_version:manifest.assembler_version,scoring_version:manifest.scoring_version,manifest_hash:manifest.manifest_hash,questions:manifest.questions.map(q=>({position:q.position,question_revision_id:q.question_revision_id,format:q.format,prompt:q.prompt,options:q.option_order.map(id=>{const option=q.options.find(o=>o.id===id);return{id,option_revision_id:option?.option_revision_id,label:option?.label||''};})}))};}

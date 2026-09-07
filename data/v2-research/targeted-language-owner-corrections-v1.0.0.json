@@ -1,0 +1,906 @@
+{
+  "schema_version": "1.0.0",
+  "status": "OWNER_AUTHORIZED_TARGETED_RETEST",
+  "owner_attempt_id": "be07d7f3-7df2-4d31-8106-c5c9c2ae3180",
+  "source_bank": "viago-validation-bank-233-empirical-language-v1.0.0",
+  "successor_bank": "viago-validation-bank-233-targeted-language-v1.0.0",
+  "successor_hash": "98b1f1506971a787e4988c6b297cb39f5c55490c9bc87d1a465bdae5b551d689",
+  "dispositions": [
+    {
+      "id": "EXP2-S-13",
+      "disposition": "MAJOR_REWRITE",
+      "before": {
+        "question_revision_id": "EXP2-S-13@empirical-language-1.0.0",
+        "id": "EXP2-S-13",
+        "source": "targeted-expansion-02",
+        "format": "SINGLE_SELECT",
+        "color": null,
+        "prompt": "After a demanding week, you get one completely free evening. What do you choose?",
+        "options": [
+          {
+            "id": "EXP2-S-13:o1",
+            "label": "Make progress on something important to me",
+            "color": "red"
+          },
+          {
+            "id": "EXP2-S-13:o2",
+            "label": "Follow whatever feels most energizing",
+            "color": "blue"
+          },
+          {
+            "id": "EXP2-S-13:o3",
+            "label": "Spend it with someone or something I am committed to",
+            "color": "yellow"
+          },
+          {
+            "id": "EXP2-S-13:o4",
+            "label": "Get absorbed in something I want to understand",
+            "color": "green"
+          }
+        ],
+        "domain": "allocation of scarce discretionary energy",
+        "context": "free-time-leisure",
+        "tones": [
+          "limited-energy"
+        ],
+        "orientation": "SELF_ACTION",
+        "family": "allocation of scarce discretionary energy",
+        "construct": "resource-allocation",
+        "pairs": [
+          "RED_BLUE",
+          "RED_YELLOW",
+          "RED_GREEN",
+          "BLUE_YELLOW",
+          "BLUE_GREEN",
+          "YELLOW_GREEN"
+        ],
+        "dimensions": [
+          "RESOURCE_ALLOCATION",
+          "ENVIRONMENT_PREFERENCE"
+        ],
+        "work": false,
+        "weak": false,
+        "revision": {
+          "source_question_revision_id": "EXP2-S-13@validation-1.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": false,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 18,
+          "proposed_prompt_words": 18,
+          "current_option_spread": 6,
+          "proposed_option_spread": 6
+        },
+        "engagement_revision": null,
+        "empirical_language_revision": {
+          "source_question_revision_id": "EXP2-S-13@human-1.0.0",
+          "standard": "VIAGO_HUMAN_RECOGNITION_STANDARD_V2",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        }
+      },
+      "after": {
+        "question_revision_id": "EXP2-S-13@targeted-language-1.0.0",
+        "id": "EXP2-S-13",
+        "source": "targeted-expansion-02",
+        "format": "SINGLE_SELECT",
+        "color": null,
+        "prompt": "After a demanding week, you get one completely free evening. What do you choose?",
+        "options": [
+          {
+            "id": "EXP2-S-13:o1",
+            "label": "Finish a personal project I have wanted to move forward",
+            "color": "red"
+          },
+          {
+            "id": "EXP2-S-13:o2",
+            "label": "Try a new place, activity, or spontaneous plan",
+            "color": "blue"
+          },
+          {
+            "id": "EXP2-S-13:o3",
+            "label": "Spend unhurried time with someone close to me",
+            "color": "yellow"
+          },
+          {
+            "id": "EXP2-S-13:o4",
+            "label": "Dive into a topic, puzzle, or hobby I want to understand better",
+            "color": "green"
+          }
+        ],
+        "domain": "allocation of scarce discretionary energy",
+        "context": "free-time-leisure",
+        "tones": [
+          "limited-energy"
+        ],
+        "orientation": "SELF_ACTION",
+        "family": "allocation of scarce discretionary energy",
+        "construct": "resource-allocation",
+        "pairs": [
+          "RED_BLUE",
+          "RED_YELLOW",
+          "RED_GREEN",
+          "BLUE_YELLOW",
+          "BLUE_GREEN",
+          "YELLOW_GREEN"
+        ],
+        "dimensions": [
+          "RESOURCE_ALLOCATION",
+          "ENVIRONMENT_PREFERENCE"
+        ],
+        "work": false,
+        "weak": false,
+        "revision": {
+          "source_question_revision_id": "EXP2-S-13@validation-1.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": false,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 18,
+          "proposed_prompt_words": 18,
+          "current_option_spread": 6,
+          "proposed_option_spread": 6
+        },
+        "engagement_revision": null,
+        "empirical_language_revision": {
+          "source_question_revision_id": "EXP2-S-13@human-1.0.0",
+          "standard": "VIAGO_HUMAN_RECOGNITION_STANDARD_V2",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        },
+        "targeted_language_revision": {
+          "source_question_revision_id": "EXP2-S-13@empirical-language-1.0.0",
+          "disposition": "MAJOR_REWRITE",
+          "owner_attempt_id": "be07d7f3-7df2-4d31-8106-c5c9c2ae3180",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        }
+      }
+    },
+    {
+      "id": "EXP3-S-048",
+      "disposition": "LIGHT_REWRITE",
+      "before": {
+        "question_revision_id": "EXP3-S-048@human-1.0.0",
+        "id": "EXP3-S-048",
+        "source": "final-pretest-expansion-v2",
+        "format": "SINGLE_SELECT",
+        "color": null,
+        "prompt": "You and a friend disagree about how to spend a shared day. What do you want first?",
+        "options": [
+          {
+            "id": "EXP3-S-048:o1",
+            "label": "A decision that lets the day move forward",
+            "color": "red"
+          },
+          {
+            "id": "EXP3-S-048:o2",
+            "label": "A new option neither of us proposed",
+            "color": "blue"
+          },
+          {
+            "id": "EXP3-S-048:o3",
+            "label": "A choice that preserves a good day together",
+            "color": "yellow"
+          },
+          {
+            "id": "EXP3-S-048:o4",
+            "label": "A clear comparison of the practical tradeoffs",
+            "color": "green"
+          }
+        ],
+        "domain": "conflict",
+        "context": "friendship",
+        "tones": [
+          "disagreement"
+        ],
+        "orientation": "INTERPERSONAL",
+        "family": "shared-day-disagreement",
+        "construct": "shared-day-disagreement",
+        "pairs": [
+          "RED_BLUE",
+          "RED_YELLOW",
+          "RED_GREEN",
+          "BLUE_YELLOW",
+          "BLUE_GREEN",
+          "YELLOW_GREEN"
+        ],
+        "dimensions": [],
+        "work": false,
+        "weak": false,
+        "active_legacy_id": null,
+        "revision": {
+          "source_question_revision_id": "EXP3-S-048@validation-2.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": false,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 17,
+          "proposed_prompt_words": 17,
+          "current_option_spread": 1,
+          "proposed_option_spread": 1
+        },
+        "engagement_revision": null
+      },
+      "after": {
+        "question_revision_id": "EXP3-S-048@targeted-language-1.0.0",
+        "id": "EXP3-S-048",
+        "source": "final-pretest-expansion-v2",
+        "format": "SINGLE_SELECT",
+        "color": null,
+        "prompt": "You and a friend disagree about how to spend a shared day. What do you want first?",
+        "options": [
+          {
+            "id": "EXP3-S-048:o1",
+            "label": "Pick an option and get the day moving",
+            "color": "red"
+          },
+          {
+            "id": "EXP3-S-048:o2",
+            "label": "Suggest something new that could excite us both",
+            "color": "blue"
+          },
+          {
+            "id": "EXP3-S-048:o3",
+            "label": "Talk until we find what we would both enjoy together",
+            "color": "yellow"
+          },
+          {
+            "id": "EXP3-S-048:o4",
+            "label": "Lay out the time, cost, and practical tradeoffs",
+            "color": "green"
+          }
+        ],
+        "domain": "conflict",
+        "context": "friendship",
+        "tones": [
+          "disagreement"
+        ],
+        "orientation": "INTERPERSONAL",
+        "family": "shared-day-disagreement",
+        "construct": "shared-day-disagreement",
+        "pairs": [
+          "RED_BLUE",
+          "RED_YELLOW",
+          "RED_GREEN",
+          "BLUE_YELLOW",
+          "BLUE_GREEN",
+          "YELLOW_GREEN"
+        ],
+        "dimensions": [],
+        "work": false,
+        "weak": false,
+        "active_legacy_id": null,
+        "revision": {
+          "source_question_revision_id": "EXP3-S-048@validation-2.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": false,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 17,
+          "proposed_prompt_words": 17,
+          "current_option_spread": 1,
+          "proposed_option_spread": 1
+        },
+        "engagement_revision": null,
+        "targeted_language_revision": {
+          "source_question_revision_id": "EXP3-S-048@human-1.0.0",
+          "disposition": "LIGHT_REWRITE",
+          "owner_attempt_id": "be07d7f3-7df2-4d31-8106-c5c9c2ae3180",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        }
+      }
+    },
+    {
+      "id": "EXP3-S-019",
+      "disposition": "MAJOR_REWRITE",
+      "before": {
+        "question_revision_id": "EXP3-S-019@empirical-language-1.0.0",
+        "id": "EXP3-S-019",
+        "source": "final-pretest-expansion-v2",
+        "format": "SINGLE_SELECT",
+        "color": null,
+        "prompt": "You meet someone interesting at a gathering. What makes the conversation worth it?",
+        "options": [
+          {
+            "id": "EXP3-S-019:o1",
+            "label": "It leads to something useful",
+            "color": "red"
+          },
+          {
+            "id": "EXP3-S-019:o2",
+            "label": "It becomes lively and unexpected",
+            "color": "blue"
+          },
+          {
+            "id": "EXP3-S-019:o3",
+            "label": "It feels like a real connection",
+            "color": "yellow"
+          },
+          {
+            "id": "EXP3-S-019:o4",
+            "label": "I understand how the person thinks",
+            "color": "green"
+          }
+        ],
+        "domain": "social-interaction",
+        "context": "unfamiliar-social-setting",
+        "tones": [
+          "positive-calm"
+        ],
+        "orientation": "SELF_PREFERENCE",
+        "family": "worthwhile-new-conversation",
+        "construct": "worthwhile-new-conversation",
+        "pairs": [
+          "RED_BLUE",
+          "RED_YELLOW",
+          "RED_GREEN",
+          "BLUE_YELLOW",
+          "BLUE_GREEN",
+          "YELLOW_GREEN"
+        ],
+        "dimensions": [],
+        "work": false,
+        "weak": false,
+        "active_legacy_id": null,
+        "revision": {
+          "source_question_revision_id": "EXP3-S-019@validation-2.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": false,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 13,
+          "proposed_prompt_words": 13,
+          "current_option_spread": 4,
+          "proposed_option_spread": 4
+        },
+        "engagement_revision": null,
+        "empirical_language_revision": {
+          "source_question_revision_id": "EXP3-S-019@human-1.0.0",
+          "standard": "VIAGO_HUMAN_RECOGNITION_STANDARD_V2",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        }
+      },
+      "after": {
+        "question_revision_id": "EXP3-S-019@targeted-language-1.0.0",
+        "id": "EXP3-S-019",
+        "source": "final-pretest-expansion-v2",
+        "format": "SINGLE_SELECT",
+        "color": null,
+        "prompt": "You strike up a conversation with someone new at a gathering. Which kind of exchange draws you in most?",
+        "options": [
+          {
+            "id": "EXP3-S-019:o1",
+            "label": "We trade ideas we can put to use",
+            "color": "red"
+          },
+          {
+            "id": "EXP3-S-019:o2",
+            "label": "The conversation gains energy and goes somewhere unexpected",
+            "color": "blue"
+          },
+          {
+            "id": "EXP3-S-019:o3",
+            "label": "We find something personal that helps us connect",
+            "color": "yellow"
+          },
+          {
+            "id": "EXP3-S-019:o4",
+            "label": "We unpack how something works or why they see it that way",
+            "color": "green"
+          }
+        ],
+        "domain": "social-interaction",
+        "context": "unfamiliar-social-setting",
+        "tones": [
+          "positive-calm"
+        ],
+        "orientation": "SELF_PREFERENCE",
+        "family": "worthwhile-new-conversation",
+        "construct": "worthwhile-new-conversation",
+        "pairs": [
+          "RED_BLUE",
+          "RED_YELLOW",
+          "RED_GREEN",
+          "BLUE_YELLOW",
+          "BLUE_GREEN",
+          "YELLOW_GREEN"
+        ],
+        "dimensions": [],
+        "work": false,
+        "weak": false,
+        "active_legacy_id": null,
+        "revision": {
+          "source_question_revision_id": "EXP3-S-019@validation-2.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": false,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 13,
+          "proposed_prompt_words": 13,
+          "current_option_spread": 4,
+          "proposed_option_spread": 4
+        },
+        "engagement_revision": null,
+        "empirical_language_revision": {
+          "source_question_revision_id": "EXP3-S-019@human-1.0.0",
+          "standard": "VIAGO_HUMAN_RECOGNITION_STANDARD_V2",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        },
+        "targeted_language_revision": {
+          "source_question_revision_id": "EXP3-S-019@empirical-language-1.0.0",
+          "disposition": "MAJOR_REWRITE",
+          "owner_attempt_id": "be07d7f3-7df2-4d31-8106-c5c9c2ae3180",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        }
+      }
+    },
+    {
+      "id": "EXP3-L-R-008",
+      "disposition": "MAJOR_REWRITE",
+      "before": {
+        "question_revision_id": "EXP3-L-R-008@human-1.0.0",
+        "id": "EXP3-L-R-008",
+        "source": "final-pretest-expansion-v2",
+        "format": "LIKERT",
+        "color": "red",
+        "prompt": "When several purchases are good enough, I favor the one with the strongest practical payoff.",
+        "options": [],
+        "domain": "decision-making",
+        "context": "purchasing",
+        "tones": [
+          "ordinary-calm"
+        ],
+        "orientation": "SELF_PREFERENCE",
+        "family": "purchase-payoff-priority",
+        "construct": "purchase-payoff-priority",
+        "pairs": [
+          "RED_BLUE",
+          "RED_GREEN"
+        ],
+        "dimensions": [
+          "RESOURCE_ALLOCATION"
+        ],
+        "work": false,
+        "weak": false,
+        "active_legacy_id": null,
+        "revision": {
+          "source_question_revision_id": "EXP3-L-R-008@validation-2.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": false,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 15,
+          "proposed_prompt_words": 15,
+          "current_option_spread": 0,
+          "proposed_option_spread": 0
+        },
+        "engagement_revision": null
+      },
+      "after": {
+        "question_revision_id": "EXP3-L-R-008@targeted-language-1.0.0",
+        "id": "EXP3-L-R-008",
+        "source": "final-pretest-expansion-v2",
+        "format": "LIKERT",
+        "color": "red",
+        "prompt": "When choosing between two good purchases, I lean toward the one that could deliver the bigger result, even if the safer option is more predictable.",
+        "options": [],
+        "domain": "decision-making",
+        "context": "purchasing",
+        "tones": [
+          "ordinary-calm"
+        ],
+        "orientation": "SELF_PREFERENCE",
+        "family": "purchase-payoff-priority",
+        "construct": "purchase-payoff-priority",
+        "pairs": [
+          "RED_BLUE",
+          "RED_GREEN"
+        ],
+        "dimensions": [
+          "RESOURCE_ALLOCATION"
+        ],
+        "work": false,
+        "weak": false,
+        "active_legacy_id": null,
+        "revision": {
+          "source_question_revision_id": "EXP3-L-R-008@validation-2.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": false,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 15,
+          "proposed_prompt_words": 15,
+          "current_option_spread": 0,
+          "proposed_option_spread": 0
+        },
+        "engagement_revision": null,
+        "targeted_language_revision": {
+          "source_question_revision_id": "EXP3-L-R-008@human-1.0.0",
+          "disposition": "MAJOR_REWRITE",
+          "owner_attempt_id": "be07d7f3-7df2-4d31-8106-c5c9c2ae3180",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        }
+      }
+    },
+    {
+      "id": "EXP2-L-B-03",
+      "disposition": "MAJOR_REWRITE",
+      "before": {
+        "question_revision_id": "EXP2-L-B-03@human-1.0.0",
+        "id": "EXP2-L-B-03",
+        "source": "targeted-expansion-02",
+        "format": "LIKERT",
+        "color": "blue",
+        "prompt": "I trust a new connection more when the conversation feels open and unscripted.",
+        "options": [],
+        "domain": "Blue trust through open generative interaction",
+        "context": "unfamiliar-social-situation",
+        "tones": [
+          "trust-forming"
+        ],
+        "orientation": "PREFERENCE_IN_OTHERS",
+        "family": "Blue trust through open generative interaction",
+        "construct": "trust",
+        "pairs": [
+          "BLUE_YELLOW",
+          "BLUE_GREEN"
+        ],
+        "dimensions": [
+          "TRUST_FORMATION",
+          "ENVIRONMENT_PREFERENCE"
+        ],
+        "work": false,
+        "weak": false,
+        "revision": {
+          "source_question_revision_id": "EXP2-L-B-03@validation-1.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": true,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "MODERATE",
+          "proposed_load": "INSTANT",
+          "load_review": "HUMAN_REVIEWED_OVERRIDE",
+          "current_prompt_words": 25,
+          "proposed_prompt_words": 13,
+          "current_option_spread": 0,
+          "proposed_option_spread": 0
+        },
+        "engagement_revision": null
+      },
+      "after": {
+        "question_revision_id": "EXP2-L-B-03@targeted-language-1.0.0",
+        "id": "EXP2-L-B-03",
+        "source": "targeted-expansion-02",
+        "format": "LIKERT",
+        "color": "blue",
+        "prompt": "With someone new, I warm up faster through an open, free-flowing conversation than through getting to know each other gradually.",
+        "options": [],
+        "domain": "Blue trust through open generative interaction",
+        "context": "unfamiliar-social-situation",
+        "tones": [
+          "trust-forming"
+        ],
+        "orientation": "PREFERENCE_IN_OTHERS",
+        "family": "Blue trust through open generative interaction",
+        "construct": "trust",
+        "pairs": [
+          "BLUE_YELLOW",
+          "BLUE_GREEN"
+        ],
+        "dimensions": [
+          "TRUST_FORMATION",
+          "ENVIRONMENT_PREFERENCE"
+        ],
+        "work": false,
+        "weak": false,
+        "revision": {
+          "source_question_revision_id": "EXP2-L-B-03@validation-1.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": true,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "MODERATE",
+          "proposed_load": "INSTANT",
+          "load_review": "HUMAN_REVIEWED_OVERRIDE",
+          "current_prompt_words": 25,
+          "proposed_prompt_words": 13,
+          "current_option_spread": 0,
+          "proposed_option_spread": 0
+        },
+        "engagement_revision": null,
+        "targeted_language_revision": {
+          "source_question_revision_id": "EXP2-L-B-03@human-1.0.0",
+          "disposition": "MAJOR_REWRITE",
+          "owner_attempt_id": "be07d7f3-7df2-4d31-8106-c5c9c2ae3180",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        }
+      }
+    },
+    {
+      "id": "0eaa09f4-95af-45a6-9846-13202a795033",
+      "disposition": "MAJOR_REWRITE",
+      "before": {
+        "question_revision_id": "0eaa09f4-95af-45a6-9846-13202a795033@empirical-language-1.0.0",
+        "id": "0eaa09f4-95af-45a6-9846-13202a795033",
+        "source": "reconstructed-legacy",
+        "format": "LIKERT",
+        "color": "green",
+        "prompt": "When two choices are both good, I prefer the one with the more predictable outcome.",
+        "options": [],
+        "domain": "stability-security",
+        "context": "everyday-decision",
+        "tones": [
+          "uncertainty",
+          "competing-alternatives"
+        ],
+        "orientation": "SELF_PREFERENCE",
+        "family": "predictability-versus-upside",
+        "construct": "predictability-versus",
+        "pairs": [
+          "RED_GREEN",
+          "BLUE_GREEN"
+        ],
+        "dimensions": [],
+        "work": false,
+        "weak": false,
+        "active_legacy_id": "0eaa09f4-95af-45a6-9846-13202a795033",
+        "revision": {
+          "source_question_revision_id": "0eaa09f4-95af-45a6-9846-13202a795033@validation-1.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": true,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 22,
+          "proposed_prompt_words": 19,
+          "current_option_spread": 0,
+          "proposed_option_spread": 0
+        },
+        "engagement_revision": null,
+        "empirical_language_revision": {
+          "source_question_revision_id": "0eaa09f4-95af-45a6-9846-13202a795033@human-1.0.0",
+          "standard": "VIAGO_HUMAN_RECOGNITION_STANDARD_V2",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        }
+      },
+      "after": {
+        "question_revision_id": "0eaa09f4-95af-45a6-9846-13202a795033@targeted-language-1.0.0",
+        "id": "0eaa09f4-95af-45a6-9846-13202a795033",
+        "source": "reconstructed-legacy",
+        "format": "LIKERT",
+        "color": "green",
+        "prompt": "When two choices are both good, I lean toward the predictable one even when the other offers more upside.",
+        "options": [],
+        "domain": "stability-security",
+        "context": "everyday-decision",
+        "tones": [
+          "uncertainty",
+          "competing-alternatives"
+        ],
+        "orientation": "SELF_PREFERENCE",
+        "family": "predictability-versus-upside",
+        "construct": "predictability-versus",
+        "pairs": [
+          "RED_GREEN",
+          "BLUE_GREEN"
+        ],
+        "dimensions": [],
+        "work": false,
+        "weak": false,
+        "active_legacy_id": "0eaa09f4-95af-45a6-9846-13202a795033",
+        "revision": {
+          "source_question_revision_id": "0eaa09f4-95af-45a6-9846-13202a795033@validation-1.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": true,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 22,
+          "proposed_prompt_words": 19,
+          "current_option_spread": 0,
+          "proposed_option_spread": 0
+        },
+        "engagement_revision": null,
+        "empirical_language_revision": {
+          "source_question_revision_id": "0eaa09f4-95af-45a6-9846-13202a795033@human-1.0.0",
+          "standard": "VIAGO_HUMAN_RECOGNITION_STANDARD_V2",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        },
+        "targeted_language_revision": {
+          "source_question_revision_id": "0eaa09f4-95af-45a6-9846-13202a795033@empirical-language-1.0.0",
+          "disposition": "MAJOR_REWRITE",
+          "owner_attempt_id": "be07d7f3-7df2-4d31-8106-c5c9c2ae3180",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        }
+      }
+    },
+    {
+      "id": "EXP3-L-Y-003",
+      "disposition": "LIGHT_REWRITE",
+      "before": {
+        "question_revision_id": "EXP3-L-Y-003@human-1.0.0",
+        "id": "EXP3-L-Y-003",
+        "source": "final-pretest-expansion-v2",
+        "format": "LIKERT",
+        "color": "yellow",
+        "prompt": "I trust someone more when their support remains steady after the exciting part has passed.",
+        "options": [],
+        "domain": "trust-formation",
+        "context": "close-relationship",
+        "tones": [
+          "positive-calm"
+        ],
+        "orientation": "PREFERENCE_IN_OTHERS",
+        "family": "steady-support-builds-trust",
+        "construct": "steady-support-builds-trust",
+        "pairs": [
+          "BLUE_YELLOW",
+          "YELLOW_GREEN"
+        ],
+        "dimensions": [
+          "TRUST_FORMATION"
+        ],
+        "work": false,
+        "weak": false,
+        "active_legacy_id": null,
+        "revision": {
+          "source_question_revision_id": "EXP3-L-Y-003@validation-2.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": false,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 15,
+          "proposed_prompt_words": 15,
+          "current_option_spread": 0,
+          "proposed_option_spread": 0
+        },
+        "engagement_revision": null
+      },
+      "after": {
+        "question_revision_id": "EXP3-L-Y-003@targeted-language-1.0.0",
+        "id": "EXP3-L-Y-003",
+        "source": "final-pretest-expansion-v2",
+        "format": "LIKERT",
+        "color": "yellow",
+        "prompt": "I trust people more when they keep showing up after the excitement wears off.",
+        "options": [],
+        "domain": "trust-formation",
+        "context": "close-relationship",
+        "tones": [
+          "positive-calm"
+        ],
+        "orientation": "PREFERENCE_IN_OTHERS",
+        "family": "steady-support-builds-trust",
+        "construct": "steady-support-builds-trust",
+        "pairs": [
+          "BLUE_YELLOW",
+          "YELLOW_GREEN"
+        ],
+        "dimensions": [
+          "TRUST_FORMATION"
+        ],
+        "work": false,
+        "weak": false,
+        "active_legacy_id": null,
+        "revision": {
+          "source_question_revision_id": "EXP3-L-Y-003@validation-2.0.0",
+          "predecessor_human_revision_id": null,
+          "language_standard": "VIAGO_HUMAN_LANGUAGE_STANDARD_V1",
+          "changed": false,
+          "measurement_change": false,
+          "mapping_change": false,
+          "scoring_change": false,
+          "semantic_family_change": false,
+          "current_load": "EASY",
+          "proposed_load": "EASY",
+          "load_review": "RULE_BASED",
+          "current_prompt_words": 15,
+          "proposed_prompt_words": 15,
+          "current_option_spread": 0,
+          "proposed_option_spread": 0
+        },
+        "engagement_revision": null,
+        "targeted_language_revision": {
+          "source_question_revision_id": "EXP3-L-Y-003@human-1.0.0",
+          "disposition": "LIGHT_REWRITE",
+          "owner_attempt_id": "be07d7f3-7df2-4d31-8106-c5c9c2ae3180",
+          "mapping_changed": false,
+          "scoring_changed": false,
+          "semantic_family_changed": false
+        }
+      }
+    }
+  ]
+}

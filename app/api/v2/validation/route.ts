@@ -5,6 +5,7 @@ import { supabaseAdmin } from '@/lib/supabaseAdminClient';
 import { ASSEMBLER_VERSION, BANK_HASH, BANK_VERSION, assembleValidationAttempt, createSeed, publicManifest, scoreValidationAttempt, type HistoryExposure } from '@/lib/v2/validation';
 import { bindValidationAttempt, bindValidationParticipant, canAccessValidationAttempt, currentValidationParticipantId } from '@/lib/v2/validationAccess';
 import { assertEnvironmentValidationAuthority } from '@/lib/v2/validationEnvironmentAuthority';
+import { baseValidationHandle, exactNormalizedParticipantMatches, normalizeValidationHandle, registerUniqueValidationIdentity, resolveValidationHistoryIdentity } from '@/lib/v2/validationIdentity';
 
 const FLAGS=new Set(['confusing','two_answers_true','no_answer_true','obvious_best_answer','context_dependent','repetitive','other']);
 export async function GET(request:Request){
@@ -24,13 +25,17 @@ export async function POST(request:Request){
    if(!participantName)return NextResponse.json({error:'Your name is required'},{status:400});
    const known=(value:unknown)=>['red','blue','yellow','green'].includes(String(value))?String(value):null;
    const existingId=await currentValidationParticipantId();let participant=null;
-   if(existingId){const existing=await supabaseAdmin.from('validation_participants').select('*').eq('id',existingId).maybeSingle();if(existing.error)throw existing.error;const label=String(existing.data?.participant_code||'').toLocaleLowerCase();if(label===participantName.toLocaleLowerCase()||label.startsWith(`${participantName.toLocaleLowerCase()} (`))participant=existing.data;}
-   if(!participant){const collision=await supabaseAdmin.from('validation_participants').select('id').eq('participant_code',participantName).maybeSingle();if(collision.error)throw collision.error;const participantCode=collision.data?`${participantName} (${randomUUID().slice(0,4)})`:participantName;const created=await supabaseAdmin.from('validation_participants').insert({participant_code:participantCode,population,known_primary:priorExperience==='YES'?known(body.known_primary):null,known_secondary:priorExperience==='YES'?known(body.known_secondary):null}).select().single();if(created.error)throw created.error;participant=created.data;await bindValidationParticipant(participant.id);}
-   const previous=await supabaseAdmin.from('validation_attempts').select('attempt_number').eq('participant_id',participant.id).order('attempt_number',{ascending:false}).limit(1);
+   if(existingId){const existing=await supabaseAdmin.from('validation_participants').select('*').eq('id',existingId).maybeSingle();if(existing.error)throw existing.error;if(existing.data&&baseValidationHandle(String(existing.data.participant_code||''))===normalizeValidationHandle(participantName))participant=existing.data;}
+   const normalizedMatches=participant?[]:await exactNormalizedParticipantMatches(participantName);
+   if(!participant&&normalizedMatches.length===1)participant=normalizedMatches[0];
+   if(!participant){const participantCode=normalizedMatches.length?`${participantName} (${randomUUID().slice(0,4)})`:participantName;const created=await supabaseAdmin.from('validation_participants').insert({participant_code:participantCode,population,known_primary:priorExperience==='YES'?known(body.known_primary):null,known_secondary:priorExperience==='YES'?known(body.known_secondary):null}).select().single();if(created.error)throw created.error;participant=created.data;if(normalizedMatches.length===0)await registerUniqueValidationIdentity(participant.id,participantName);}
+   await bindValidationParticipant(participant.id);
+   const identity=await resolveValidationHistoryIdentity(participant.id);
+   const previous=await supabaseAdmin.from('validation_attempts').select('attempt_number').in('participant_id',identity.historical_participant_ids).order('attempt_number',{ascending:false}).limit(1);
    if(previous.error)throw previous.error;const attemptNumber=(previous.data?.[0]?.attempt_number||0)+1;
-   const prior=await supabaseAdmin.from('validation_attempts').select('id,manifest,answers,completed_at,started_at').eq('participant_id',participant.id).order('started_at',{ascending:true});if(prior.error)throw prior.error;
+   const prior=await supabaseAdmin.from('validation_attempts').select('id,manifest,answers,completed_at,started_at').in('participant_id',identity.historical_participant_ids).order('started_at',{ascending:true});if(prior.error)throw prior.error;
    const history:HistoryExposure[]=(prior.data||[]).map(row=>{const answered=new Set(Object.keys(row.answers||{}));const questions=(row.manifest?.questions||[]).filter((q:{question_revision_id:string})=>row.completed_at||answered.has(q.question_revision_id)).map((q:{question_id:string;question_revision_id:string;semantic_family:string;construct?:string})=>({question_id:q.question_id,question_revision_id:q.question_revision_id,semantic_family:q.semantic_family,construct:q.construct}));return{attempt_id:row.id,completed:!!row.completed_at,questions}}).filter(x=>x.questions.length>0);
-   const manifest={...assembleValidationAttempt(createSeed(),history),bank_activated_at:environmentAuthority.bank.activated_at};
+   const manifest={...assembleValidationAttempt(createSeed(),history,identity),bank_activated_at:environmentAuthority.bank.activated_at};
    const inserted=await supabaseAdmin.from('validation_attempts').insert({participant_id:participant.id,attempt_number:attemptNumber,mode:manifest.mode,bank_version:manifest.bank_version,bank_hash:manifest.bank_hash,bank_activated_at:manifest.bank_activated_at,assembler_version:manifest.assembler_version,scoring_version:manifest.scoring_version,source_commit:manifest.source_commit,source_deployment_id:manifest.source_deployment_id,seed:manifest.seed,manifest_hash:manifest.manifest_hash,manifest}).select('id,attempt_number').single();
    if(inserted.error)throw inserted.error;await bindValidationAttempt(inserted.data.id);return NextResponse.json(inserted.data);
   }

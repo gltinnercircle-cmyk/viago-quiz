@@ -1,5 +1,5 @@
 import activePointer from '@/data/v2-governance/active-validation-bank.json';
-import activeBank from '@/data/v2-research/viago-validation-bank-233-empirical-language-v1.0.0.json';
+import activeBank from '@/data/v2-research/viago-validation-bank-233-targeted-language-v1.0.0.json';
 
 export const ACTIVE_VALIDATION_BANK_ID = activePointer.active_validation_bank_id;
 export const ACTIVE_BANK_CREATED_AT = activePointer.created_at;
