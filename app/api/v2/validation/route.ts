@@ -62,7 +62,7 @@ export async function POST(request:Request){
    const update=await supabaseAdmin.from('validation_attempts').update({score_vector:result.scores,primary_color:result.primary,secondary_color:result.secondary,ranking:result.ranking,score_margin:result.margin,completed_at:completedAt.toISOString(),elapsed_seconds:elapsed}).eq('id',attemptId);if(update.error)throw update.error;return NextResponse.json(result);
   }
   if(action==='feedback'){
-   if(!current.data.completed_at)return NextResponse.json({error:'Complete the assessment first'},{status:409});const row={attempt_id:attemptId,result_feels_like_me:Number(body.result_feels_like_me),primary_correct:body.primary_correct??null,secondary_correct:body.secondary_correct??null,repetitive:Number(body.repetitive),natural_score:Number(body.natural),notes:String(body.notes||'').slice(0,2000)||null};
+   if(!current.data.completed_at)return NextResponse.json({error:'Complete the assessment first'},{status:409});const row={attempt_id:attemptId,result_feels_like_me:Number(body.result_feels_like_me),primary_correct:body.primary_correct??null,secondary_correct:body.secondary_correct??null,repetitive:Number(body.repetitive),natural_score:Number(body.natural),overthinking_score:Number(body.overthinking),answer_distinctness_score:Number(body.answer_distinctness),notes:String(body.notes||'').slice(0,2000)||null};
    const insert=await supabaseAdmin.from('validation_feedback').insert(row);if(insert.error)throw insert.error;return NextResponse.json({ok:true});
   }
   return NextResponse.json({error:'Unknown action'},{status:400});
