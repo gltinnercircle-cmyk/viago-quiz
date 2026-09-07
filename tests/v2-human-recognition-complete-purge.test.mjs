@@ -44,7 +44,7 @@ test('history-aware four-attempt simulation passes at actual bank depth',()=>{
 
 test('purge activation remains Preview environment-scoped and production-safe',()=>{
  const runtimeFiles=['lib/v2/validation.ts','data/v2-governance/active-validation-bank.json','app/api/v2/validation/route.ts'].map(file=>fs.readFileSync(file,'utf8')).join('\n');
- assert.match(runtimeFiles,/viago-validation-bank-240-human-recognition-purge-v1\.0\.0/);
+ assert.match(runtimeFiles,/viago-validation-bank-233-empirical-language-v1\.0\.0/);
  const authority=fs.readFileSync('lib/v2/validationEnvironmentAuthority.ts','utf8');
  assert.match(authority,/VERCEL_ENV !== 'preview'/);
  assert.match(authority,/VERCEL_GIT_COMMIT_REF !== 'v2\/personality-platform'/);

@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0.0",
-  "active_validation_bank_id": "viago-validation-bank-240-human-recognition-purge-v1.0.0",
-  "bank_hash": "24564443527bfa818c27659519ee5d32b1a6257433e2ccce0552a26d33988b73",
+  "active_validation_bank_id": "viago-validation-bank-233-empirical-language-v1.0.0",
+  "bank_hash": "95ddea989a454fcfadb475f57e6b35bd192782d129509e278e460b7885a3b790",
   "assembler_version": "VIAGO_RETEST_NOVELTY_ASSEMBLER_V1",
   "scoring_version": "viago-validation-scoring-equal-opportunity-v1.0.0",
-  "created_at": "2026-09-01T18:00:00.000Z",
-  "activated_at": "2026-09-01T18:00:00.000Z",
-  "source_commit": "70af85700357337071fbdb2227b60007037b46e4",
+  "created_at": "2026-09-07T00:00:00.000Z",
+  "activated_at": "2026-09-07T00:00:00.000Z",
+  "source_commit": "a5b36011925e3ec4d38251afe6b6ccc4e14cd749",
   "deployment_id": "PENDING_OWNER_PREVIEW_DEPLOYMENT",
   "environment_key": "preview-owner-validation",
   "status": "OWNER_APPROVED_PENDING_ENVIRONMENT_SCOPED_ACTIVATION"
