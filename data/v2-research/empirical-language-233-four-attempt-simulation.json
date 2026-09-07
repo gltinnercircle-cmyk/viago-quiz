@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "status": "PASS_NON_PRODUCTION_RESEARCH",
+  "participants": 1000,
+  "attempts_each": 4,
+  "bank_id": "viago-validation-bank-233-empirical-language-v1.0.0",
+  "bank_hash": "95ddea989a454fcfadb475f57e6b35bd192782d129509e278e460b7885a3b790",
+  "assembler_version": "VIAGO_RETEST_NOVELTY_ASSEMBLER_V1",
+  "scoring_version": "viago-validation-scoring-equal-opportunity-v1.0.0",
+  "selector_failures": 0,
+  "attempts": [
+    {
+      "attempt": 1,
+      "n": 1000,
+      "contexts": 30.863,
+      "work": 0,
+      "human_recognition": 6.358,
+      "single": 26,
+      "likert": 24,
+      "color_opportunity_failures": 0
+    },
+    {
+      "attempt": 2,
+      "n": 1000,
+      "contexts": 30.657,
+      "work": 0,
+      "human_recognition": 5.169,
+      "single": 26,
+      "likert": 24,
+      "color_opportunity_failures": 0
+    },
+    {
+      "attempt": 3,
+      "n": 1000,
+      "contexts": 30.09,
+      "work": 0.034,
+      "human_recognition": 3.693,
+      "single": 26,
+      "likert": 24,
+      "color_opportunity_failures": 0
+    },
+    {
+      "attempt": 4,
+      "n": 1000,
+      "contexts": 31.805,
+      "work": 3.284,
+      "human_recognition": 7.32,
+      "single": 26,
+      "likert": 24,
+      "color_opportunity_failures": 0
+    }
+  ],
+  "transitions": [
+    {
+      "from": 1,
+      "to": 2,
+      "n": 1000,
+      "exact": 0,
+      "family": 0,
+      "construct": 0,
+      "experiential": 0
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "n": 1000,
+      "exact": 0,
+      "family": 0,
+      "construct": 0.001,
+      "experiential": 0
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "n": 1000,
+      "exact": 0,
+      "family": 0,
+      "construct": 1.647,
+      "experiential": 0.861
+    }
+  ]
+}
